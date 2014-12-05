@@ -1,0 +1,18 @@
+Generate models
+subject
+page
+section
+
+Write migrations
+Subjects: name :string, position :integer, visible :boolean
+Pages: name :string, permalink :integer, position :integer, visible :boolean
+Sections: name :string, position :integer, visible :boolean,
+          content_type :string, content :text
+
+need foreign keys
+need 3 additional indexes
+
+Run migrations
+all the way up
+all the way down
+all the way up
