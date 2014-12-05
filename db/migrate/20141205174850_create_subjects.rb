@@ -4,7 +4,7 @@ class CreateSubjects < ActiveRecord::Migration
       t.string 'name', limit: 80
       t.integer 'position'
       t.boolean 'visible', default: false
-      t.timestamp
+      t.timestamps
     end
   end
 end

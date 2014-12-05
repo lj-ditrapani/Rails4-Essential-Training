@@ -7,6 +7,7 @@ class CreateSections < ActiveRecord::Migration
       t.boolean 'visible', default: false
       t.string 'content_type', limit: 100
       t.text 'content'
+      t.timestamps
     end
     add_index('sections', 'page_id')
   end
