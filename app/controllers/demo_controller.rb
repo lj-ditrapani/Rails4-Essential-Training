@@ -1,11 +1,10 @@
 class DemoController < ApplicationController
-
   layout false
 
   def index
     # defaults to /demo/index.html
     # but can use render to give custom template view
-    # render(:template => 'demo/hello')
+    # render(template: 'demo/hello')
     # If no has, then :template is assumed
     # render 'demo/hello'
     # If no directory, then controller name is assumed
@@ -20,9 +19,9 @@ class DemoController < ApplicationController
   end
 
   def other_hello
-    # redirect_to(:controller => 'demo', :action => 'index')
+    # redirect_to(controller: 'demo', action: 'index')
     # Defaults to current controller
-    redirect_to(:action => 'index')
+    redirect_to(action: 'index')
   end
 
   def lynda

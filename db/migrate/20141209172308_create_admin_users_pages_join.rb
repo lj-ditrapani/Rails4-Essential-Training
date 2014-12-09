@@ -8,6 +8,6 @@ class CreateAdminUsersPagesJoin < ActiveRecord::Migration
       # t.integer 'page_id'
     end
     # Index across both columns
-    add_index :admin_users_pages, ['admin_user_id', 'page_id']
+    add_index :admin_users_pages, %w(admin_user_id page_id)
   end
 end
