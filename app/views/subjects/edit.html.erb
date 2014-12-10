@@ -1,0 +1,24 @@
+<%= link_to('<< Back to List', {action: 'index'}, class: 'back-link') %>
+<div class="subjects edit">
+<h1>Edit Subject</h1>
+<% url_params = {action: 'update', id: @subject.id} %>
+<%= form_for(:subject, url: url_params) do |f| %>
+  <table summary="Subject for fields">
+    <tr>
+      <th>Name</th>
+      <td><%= f.text_field(:name) %></td>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= f.text_field(:position) %></td>
+    </tr>
+    <tr>
+      <th>Visible</th>
+      <td><%= f.text_field(:visible) %></td>
+    </tr>
+  </table>
+  <div class="Form-buttons">
+    <%= submit_tag("Update Subject") %>
+  </div>
+<% end %>
+</div>
