@@ -1,0 +1,14 @@
+- Generate a PagesController and SectionController
+- Write controller actions
+    - index   Read
+    - show    Read
+    - new     Create
+    - create  Create
+    - edit    Update
+    - update  Update
+    - delete  Delete
+    - destroy Delete
+    - Don't copy SubjectsController
+- Copy HTML from subjects templates
+    - modify to work with PagesController
+    - Use text_field helper for form fields

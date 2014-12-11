@@ -1,0 +1,36 @@
+<%= link_to('<< Back to List', {action: 'index'}, class: 'back-link') %>
+<div class="sections edit">
+<h1>Edit Section</h1>
+<% url_params = {action: 'update', id: @section.id} %>
+<%= form_for(:section, url: url_params) do |f| %>
+  <table summary="Section for fields">
+    <tr>
+      <th>Name</th>
+      <td><%= f.text_field(:name) %></td>
+    </tr>
+    <tr>
+      <th>Page ID</th>
+      <td><%= f.text_field(:page_id) %></td>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= f.text_field(:position) %></td>
+    </tr>
+    <tr>
+      <th>Visible</th>
+      <td><%= f.text_field(:visible) %></td>
+    </tr>
+    <tr>
+      <th>Content Type</th>
+      <td><%= f.text_field(:content_type) %></td>
+    </tr>
+    <tr>
+      <th>Content</th>
+      <td><%= f.text_field(:content) %></td>
+    </tr>
+  </table>
+  <div class="Form-buttons">
+    <%= submit_tag("Update Section") %>
+  </div>
+<% end %>
+</div>

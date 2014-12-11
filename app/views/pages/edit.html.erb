@@ -1,0 +1,32 @@
+<%= link_to('<< Back to List', {action: 'index'}, class: 'back-link') %>
+<div class="pages edit">
+<h1>Edit Page</h1>
+<% url_params = {action: 'update', id: @page.id} %>
+<%= form_for(:page, url: url_params) do |f| %>
+  <table summary="Page for fields">
+    <tr>
+      <th>Name</th>
+      <td><%= f.text_field(:name) %></td>
+    </tr>
+    <tr>
+      <th>Subject ID</th>
+      <td><%= f.text_field(:subject_id) %></td>
+    </tr>
+    <tr>
+      <th>Permalink</th>
+      <td><%= f.text_field(:permalink) %></td>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= f.text_field(:position) %></td>
+    </tr>
+    <tr>
+      <th>Visible</th>
+      <td><%= f.text_field(:visible) %></td>
+    </tr>
+  </table>
+  <div class="Form-buttons">
+    <%= submit_tag("Update Page") %>
+  </div>
+<% end %>
+</div>
