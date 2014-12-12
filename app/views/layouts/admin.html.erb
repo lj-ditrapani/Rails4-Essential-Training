@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple CMS Admin | <%= @page_title || 'Admin' %></title>
+  <style>
+
+span.status {
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+span.status.false {
+  background: red;
+}
+
+span.status.true {
+  background: green;
+}
+
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <h1>Simple CMS Admin</h1>
+</div>
+
+<div id="main"> 
+  <% unless flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <div id="content">
+    <%= yield %>
+  </div>
+</div>
+
+<div id="footer">
+  <p> Powered by Ruby on Rails :) </p>
+</div>
+
+</body></html>

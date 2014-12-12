@@ -1,0 +1,30 @@
+<% text = <<-EOF
+26 Jesus answered them, I assure you, most solemnly I tell you, you have
+been searching for Me, not because you saw the miracles and signs but
+because you were fed with the loaves and were filled and satisfied.\n\n27 Stop toiling and doing and producing for the food that perishes and decomposes [in the using], but strive and work and produce rather for the [lasting] food which endures [continually] unto life eternal; the Son of Man will give (furnish) you that, for God the Father has authorized and certified Him and put His seal of endorsement upon Him.\n\n28 They then said, What are we to do, that we may [habitually] be working the works of God? [What are we to do to carry out what God requires?]\n\n29 Jesus replied, This is the work (service) that God asks of you: that you believe in the One Whom He has sent [that you cleave to, trust, rely on, and have faith in His Messenger].\n\n30 Therefore they said to Him, What sign (miracle, wonderwork) will You perform then, so that we may see it and believe and rely on and adhere to You? What [supernatural] work have You [to show what You can do]?
+EOF
+%>
+
+<h2>word_wrap</h2>
+<%= word_wrap(text, line_width: 40) %>
+<hr />
+
+<h2>simple_wrap</h2>
+<%= simple_format(text) %>
+<hr />
+
+<h2>simple_format + word_wrap</h2>
+<%= simple_format(word_wrap(text, line_width: 40)) %>
+<hr />
+
+<h2>truncate</h2>
+<%= truncate(text, length: 40, omission: '...') %>
+<hr />
+
+<h2>excerpt</h2>
+<%= excerpt(text, 'Jesus', radius: 100, omission: '...') %>
+<hr />
+
+<h2>highlight</h2>
+<%= highlight(text, 'Jesus') %>
+<hr />
