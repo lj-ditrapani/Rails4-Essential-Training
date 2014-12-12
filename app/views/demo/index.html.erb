@@ -9,3 +9,17 @@
 <p>
 <%= link_to('Hello with params', { :action => 'hello', :page => 5, :id => 20 }) %>
 </p>
+
+<hr />
+
+<p>
+<% name = "Ultra Magnus" %>
+
+<% name = "Sorry!'); alert('I hacked you!" %>
+
+<%= link_to('Roar', '#', onclick: "jsRoar('#{j(name)}'); return true;") %>
+
+<%= javascript_tag("jsRoar('#{j(name)}');") %>
+
+<%= javascript_tag("jsRoar('Optimus Prime');") %>
+

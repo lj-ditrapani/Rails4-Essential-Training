@@ -2,23 +2,7 @@
 <html>
 <head>
   <title>Simple CMS Admin | <%= @page_title || 'Admin' %></title>
-  <style>
-
-span.status {
-  display: block;
-  width: 10px;
-  height: 10px;
-}
-
-span.status.false {
-  background: red;
-}
-
-span.status.true {
-  background: green;
-}
-
-  </style>
+  <%= stylesheet_link_tag('application', media: 'all') %>
 </head>
 <body>
 
