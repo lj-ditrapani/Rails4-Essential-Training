@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+
   # Root route
   # root to: 'demo#index'
   root 'demo#index'
+  get 'admin', to: 'access#index'
+
   # match route
   # get 'demo/index'
+
   # Default
   match ':controller(/:action(/:id))', via: [:get, :post]
 
