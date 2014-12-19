@@ -19,6 +19,14 @@ class AdminUser < ActiveRecord::Base
   validate :username_not_bad
   # validate :no_new_users_on_saturday, on: :create
 
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  scope :sorted, -> { order 'last_name ASC, first_name ASC' }
+
+  private
+
   def username_not_bad
     if BAD_USERNAMES.include?(username)
       errors.add(:username, 'has been restricted from use')

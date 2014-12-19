@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # Root route
   # root to: 'demo#index'
   root 'demo#index'
