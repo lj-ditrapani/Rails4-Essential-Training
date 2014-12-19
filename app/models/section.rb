@@ -3,6 +3,8 @@ class Section < ActiveRecord::Base
   has_many :editors, through: :section_edits, class_name: 'AdminUser'
   belongs_to :page
 
+  after_save :touch_page
+
   CONTENT_TYPES = ['Text', 'HTML', 'xml']
 
   validates_presence_of :name
@@ -15,4 +17,10 @@ class Section < ActiveRecord::Base
   scope :invisible, -> { where visible: false }
   scope :sorted, -> { order 'sections.position ASC' }
   scope :newest_first, -> { order 'sections.created_at ASC' }
+
+  private
+
+  def touch_page
+    page.touch
+  end
 end

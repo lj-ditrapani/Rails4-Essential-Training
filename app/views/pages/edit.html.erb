@@ -1,8 +1,10 @@
-<%= link_to('<< Back to List', {action: 'index'}, class: 'back-link') %>
+<%= link_to('<< Back to List',
+            {action: 'index', subject_id: @subject.id},
+            class: 'back-link') %>
 <div class="pages edit">
 <h1>Edit Page</h1>
-<% url_params = {action: 'update', id: @page.id} %>
-<%= form_for(:page, url: url_params) do |f| %>
+<% url = {action: 'update', id: @page.id, subject_id: @subject.id} %>
+<%= form_for(:page, url: url) do |f| %>
   <%= render(partial: 'form', locals: {f: f}) %>
   <div class="Form-buttons">
     <%= submit_tag("Update Page") %>
